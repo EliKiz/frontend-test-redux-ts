@@ -1,0 +1,64 @@
+@import '../../style/variables.scss';
+.header {
+    display: flex;
+    align-items: center;
+    min-height: 110px;
+    &__logo{
+        
+        &-img {
+            width: 100%;
+            min-height: 40px;
+            cursor: pointer;
+        }
+  }
+    &__catalog{
+        width: 116px;
+        height: 50px;
+        margin: 0 20px;
+        background-color: white;
+        border: none;
+        border-radius: $radius;
+        cursor: pointer;
+        &:hover { 
+            background-color: $background-color;
+        }
+  }
+    &__catalog-hamburger{
+  
+  }
+  &__search { 
+    position: relative;
+    width: 526px;
+    height: 50px;
+    padding: 15px 20px;
+    border-radius: $radius;
+    border-image: linear-gradient(rgba(65, 70, 189, 1), rgba(255, 0, 153, 1), rgba(255, 199, 0, 1)) 1,;
+}
+
+    &__catalog-text{
+        color: $main-color-9;
+  }
+    &__filters{
+        margin-left: auto ;
+        
+        &-wrapper{
+            display: flex;
+            &-item{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 7px 20px;
+                border-radius: $radius;
+                color: $main-color-9;
+                cursor: pointer;
+                &:hover { 
+                    background-color: $background-color;
+                }
+            }
+    
+        }
+    } 
+     
+    
+  }

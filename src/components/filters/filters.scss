@@ -1,0 +1,49 @@
+@import '../../style/variables.scss';
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    &__type{
+        
+  }
+    &__type-wrapper{
+        display: flex;
+        background-color: $background-color ;
+        border-radius: $radius;
+  }
+    &__type-wrapper-item{
+        margin: 15px;
+        color: $main-color-7;
+        cursor: pointer;
+        &.active { 
+          color: $main-color-9;
+        }
+  }
+    &__search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+  }
+    &__search-form{        
+        border-radius: $radius;
+        border: 2px solid $background-color;
+    }
+    &__search-form-input{
+        padding: 15px 8px 15px 20px;
+        color: $main-color-9;
+        font-weight: 400;
+        font-size: 15px;
+        border: none;
+  }
+    &__search-form-submite{
+        background-color: $main-color-9;
+        border-radius: $radius;
+        margin-right: 5px;
+        cursor: pointer;
+        border: none;
+        width: 40px;
+        height: 40px;
+  }
+  }
