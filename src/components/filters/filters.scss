@@ -10,7 +10,7 @@
     &__type-wrapper{
         display: flex;
         background-color: $background-color ;
-        border-radius: $radius;
+        border-radius: $radius-S;
   }
     &__type-wrapper-item{
         margin: 15px;
@@ -27,8 +27,8 @@
         
   }
     &__search-form{        
-        border-radius: $radius;
-        border: 2px solid $background-color;
+        border-radius: 10px;
+        border: 2px solid $border-color;
     }
     &__search-form-input{
         padding: 15px 8px 15px 20px;
@@ -39,7 +39,7 @@
   }
     &__search-form-submite{
         background-color: $main-color-9;
-        border-radius: $radius;
+        border-radius: $radius-S;
         margin-right: 5px;
         cursor: pointer;
         border: none;

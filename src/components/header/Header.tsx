@@ -27,7 +27,7 @@ const Header = () => {
             />
             <div className="header__filters">
                 <ul className="header__filters-wrapper">
-                    <li className="header__filters-wrapper-item">
+                    <li className="header__filters-wrapper-item active">
                         <img
                             className="header__filters-wrapper-item-img"
                             src={like}

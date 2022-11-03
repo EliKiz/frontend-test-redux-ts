@@ -1,0 +1,123 @@
+@import '../../style/variables.scss';
+
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: 366px;
+    border: 1px solid $border-color;
+    border-radius: $radius-S ;
+    margin-top: 50px;
+    &__wrapper-left{
+        // display: flex;
+        width: 70%;
+  }
+  &__wrapper-left-content{
+    display: flex;
+    margin: 20px 0 0 20px;
+    
+  }
+    &__wrapper-left-img{
+        border-radius: $radius-S;
+  }
+    &__wrapper-left-info{
+        text-align: left;
+        margin-left: 20px;
+  }
+    &__wrapper-left-type{
+      color: $main-color-7;
+  }
+    &__wrapper-left-title{
+      margin-top: 15px;
+      font-weight: bold;
+      color: $main-color-9;
+  }
+    &__wrapper-left-location{
+      width: fit-content;
+      margin-top: 25px;
+      padding: 4px 8px;
+      border-radius: $radius-S;
+      background-color: $background-color;
+      color: $main-color-8
+  }
+    &__wrapper-left-saler{
+      margin-top: 12px;
+      color: $main-color-9;
+      &-text { 
+        color: $main-color-7;
+      }
+  }
+    &__wrapper-left-product{
+      width: fit-content;
+      margin-top: 12px;
+      color: $main-color-9;
+      padding: 8px;
+      border-radius: $radius-S;
+      background-color: $background-color;
+      &-text { 
+        color: $main-color-7;
+      }
+    
+  }
+  &__wrapper-left-descr { 
+    margin: 10px 20px 0 0 ;
+    color: $main-color-8;
+  }
+    &__wrapper-right{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        border-radius: $radius-S 0px 0px $radius-S;
+        border-left: 1px solid $border-color;
+        flex-direction: column;
+        padding: 20px 20px 0 20px;
+        width: 30%;
+  }
+    &__wrapper-right-price{
+        text-align: left;
+        color: $main-color-9
+  }
+    &__wrapper-right-amount,
+    &__wrapper-right-piece{
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      padding-top: 10px;
+      color: $main-color-9;
+      &-text { 
+        color: $main-color-7;
+      }
+  }
+    &__wrapper-right-buttons{
+      display: flex;
+      
+      margin-bottom: 20px;
+      &-add { 
+        font-size: 15px;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $main-color-9;
+        cursor: pointer;
+        width: 212px;
+        height: 50px;
+        border: none;
+        background-color: $background-color;
+        border-radius: $radius-S;
+      }
+      &-favorite{ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px;
+        border: none;
+        padding: 15px;
+        background-color: $background-color;
+        border-radius: $radius-S;
+        cursor: pointer;
+
+      }
+  }
+  }

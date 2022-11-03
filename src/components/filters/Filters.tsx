@@ -1,26 +1,31 @@
 import search from "./img/Vector.svg";
-import type { FiltersData } from "../../types";
+import type { Card } from "../../types";
 import classNames from "classnames";
 import "./filters.scss";
 import { useEffect, useMemo, useState } from "react";
 import Spinner from "../../Spinner/Spinner";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import {
+    changeActiveClass,
+    fetchFilters,
+    selectActiveFilter,
+    selectFiltersList,
+} from "./filtersSlice";
 
 const Filters = () => {
-    const [filters, setFilters] = useState<FiltersData[]>([]);
-    const [activeFilter, setActiveFilter] = useState<string>("all");
+    // const [activeFilter, setActiveFilter] = useState<string>("all");
 
-    const getFilters = () => {
-        fetch("http://localhost:3001/filters")
-            .then((res) => res.json())
-            .then((data) => setFilters(data));
-    };
+    const filtersList = useAppSelector(selectFiltersList);
+    const activeFilter = useAppSelector(selectActiveFilter);
+
+    const dispatch = useAppDispatch();
 
     const changeColor = (value: string) => {
-        setActiveFilter(value);
+        dispatch(changeActiveClass(value));
     };
 
     useEffect(() => {
-        getFilters();
+        dispatch(fetchFilters());
     }, []);
 
     // const filtersContent = (data: FiltersData[]) => {
@@ -45,9 +50,12 @@ const Filters = () => {
     //     });
     // };
 
+    const handleSubmite = (event: React.ChangeEvent<HTMLFormElement>) => {
+        event.preventDefault();
+    };
     const filtersContent = useMemo(() => {
         console.log("runn");
-        return filters.map((item) => {
+        return filtersList.map((item) => {
             const itemClass = classNames(
                 "filters__type-wrapper-item",
                 item.colored,
@@ -65,7 +73,7 @@ const Filters = () => {
                 </li>
             );
         });
-    }, [activeFilter, filters]);
+    }, [activeFilter, filtersList]);
     // console.log("filtersontet", filtersContent);
 
     // const content = filtersContent(filters);
@@ -76,7 +84,7 @@ const Filters = () => {
                 <ul className="filters__type-wrapper">{filtersContent}</ul>
             </div>
             <div className="filters__search">
-                <form className="filters__search-form">
+                <form onSubmit={handleSubmite} className="filters__search-form">
                     <input
                         className="filters__search-form-input"
                         type="text"

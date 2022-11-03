@@ -17,7 +17,7 @@
         margin: 0 20px;
         background-color: white;
         border: none;
-        border-radius: $radius;
+        border-radius: $radius-S;
         cursor: pointer;
         &:hover { 
             background-color: $background-color;
@@ -31,8 +31,12 @@
     width: 526px;
     height: 50px;
     padding: 15px 20px;
-    border-radius: $radius;
-    border-image: linear-gradient(rgba(65, 70, 189, 1), rgba(255, 0, 153, 1), rgba(255, 199, 0, 1)) 1,;
+    border-radius: $radius-S;
+    background: 
+    linear-gradient(rgb(255, 255, 255) 0 0) padding-box,
+    linear-gradient(rgba(65, 70, 189, 1), rgba(255, 0, 153, 1), rgba(255, 199, 0, 1)) border-box;
+    border: 2px solid transparent;
+    
 }
 
     &__catalog-text{
@@ -48,12 +52,19 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding: 7px 20px;
-                border-radius: $radius;
+                margin-right: 10px;
+                padding: 10px;
+                border-radius: $radius-S;
                 color: $main-color-9;
                 cursor: pointer;
                 &:hover { 
                     background-color: $background-color;
+                }
+                &.active { 
+                    background-color: $background-color;
+                }
+                &:last-child { 
+                    margin-right: 0px;
                 }
             }
     
