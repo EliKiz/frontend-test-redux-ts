@@ -1,10 +1,13 @@
-import { Card } from "../../types";
+import { ItemListChildrenProps } from "../../types";
 import cardImg from "./img/ImageCard.png";
+import classNames from "classnames";
 import geo from "./img/geo_15.svg";
-import favorite from "./img/favourite_20.svg";
+import favoriteDark from "./img/favouriteDark.svg";
+import favoriteWhite from "./img/favoriteWhite.svg";
 import "./itemListChildren.scss";
 
 const ItemListChildren = ({
+    id,
     type,
     name,
     description,
@@ -14,7 +17,9 @@ const ItemListChildren = ({
     price,
     amount,
     costPerPiece,
-}: Card) => {
+    favorite,
+    toggleDone,
+}: ItemListChildrenProps) => {
     return (
         <li className="item">
             <div className="item__wrapper-left">
@@ -70,8 +75,19 @@ const ItemListChildren = ({
                         <button className="item__wrapper-right-buttons-add">
                             Добавить в сделки
                         </button>
-                        <button className="item__wrapper-right-buttons-favorite">
-                            <img src={favorite} alt="favorite icon" />
+                        <button
+                            onClick={() => toggleDone(id)}
+                            className={classNames(
+                                "item__wrapper-right-buttons-favorite",
+                                {
+                                    "item__wrapper-right-buttons-favorite-active":
+                                        favorite,
+                                }
+                            )}>
+                            <img
+                                src={favorite ? favoriteWhite : favoriteDark}
+                                alt="favorite icon"
+                            />
                         </button>
                     </div>
                 </div>

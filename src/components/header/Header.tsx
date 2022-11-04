@@ -23,7 +23,7 @@ const Header = () => {
             <input
                 className="header__search"
                 type="text"
-                placeholder="Поиск:"
+                placeholder="Поиск: например, Труба цинковая ГОСТ 245-50.02 4 мм"
             />
             <div className="header__filters">
                 <ul className="header__filters-wrapper">

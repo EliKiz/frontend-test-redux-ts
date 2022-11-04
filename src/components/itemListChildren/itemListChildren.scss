@@ -117,7 +117,9 @@
         background-color: $background-color;
         border-radius: $radius-S;
         cursor: pointer;
-
+        &-active { 
+          background-color: $main-color-9;
+        }
       }
   }
   }

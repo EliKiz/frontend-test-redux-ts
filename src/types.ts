@@ -9,7 +9,12 @@ export interface Card {
     price: string,
     amount: string,
     costPerPiece: string,
-    filter: string
+    filter: string,
+    favorite: boolean,
+}
+
+export interface ItemListChildrenProps extends Card { 
+    toggleDone: (id: string) => void;
 }
 
 export interface FiltersData { 
@@ -23,5 +28,6 @@ export interface FiltersData {
 export interface InitialStateTypes { 
     filtersList: FiltersData[],
     activeFilter: "all" 
-    status: "idle" | "loading" | "error"
+    status: "idle" | "loading" | "error",
+    inputSearch: ""
 }

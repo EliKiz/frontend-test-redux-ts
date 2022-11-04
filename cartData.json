@@ -11,7 +11,9 @@
         "price": "22222",
         "amount": "11",
         "costPerPiece": "1200",
-        "filter": "auction"
+        "filter": "auction",
+        "favorite": false,
+        "addedDeals" : false
       },
       {
         "id": "453a5405-ev3cc-4c7f-afa9-de308d95e40",
@@ -23,7 +25,69 @@
         "location": "Пермь, Солнечная 23",
         "price": "32322",
         "amount": "12",
-        "costPerPiece": "3100"
+        "costPerPiece": "3100",
+        "favorite": false,
+        "addedDeals" : false
+      },
+      {
+        "id": "453a5405-ev3cc-4adc7f-afa9-de308d95e40",
+        "type" : "Прямые продажи",
+        "name": "Доски 120x50",
+        "product": "Стройматериалы",
+        "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 ! Мы стараемся быть не такими как все и даем вам: Доставка в согласованный день, если переносим - доставка бесплатно за наш счет. Весь материал соответствует гостам. Вы можете проверить пиломатериалы на складе или на адресе. Если материал не соответствует заявленному качеству - бесплатно меняем его.",
+        "seller": "Торговый Дом ГОСТ",
+        "location": "Пермь, Солнечная 23",
+        "price": "32322",
+        "amount": "12",
+        "costPerPiece": "3100",
+        "filter": "sale",
+        "favorite": false,
+        "addedDeals" : false
+      },
+      {
+        "id": "453a5405-ev3cc-4addwac7f-afa9-de2308d9a5e40",
+        "type" : "Прямые продажи",
+        "name": "Саморезы 50x100",
+        "product": "Стройматериалы",
+        "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 ! Мы стараемся быть не такими как все и даем вам: Доставка в согласованный день, если переносим - доставка бесплатно за наш счет. Весь материал соответствует гостам. Вы можете проверить пиломатериалы на складе или на адресе. Если материал не соответствует заявленному качеству - бесплатно меняем его.",
+        "seller": "Торговый Дом ГОСТ",
+        "location": "Пермь, Солнечная 23",
+        "price": "22",
+        "amount": "12",
+        "costPerPiece": "3100",
+        "filter": "sale",
+        "favorite": false,
+        "addedDeals" : false
+      },
+      {
+        "id": "453a5405-ev3cc-4addwac7f-afa9-de2308d95e40",
+        "type" : "Аукцион",
+        "name": "Саморезы 30x70",
+        "product": "Стройматериалы",
+        "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 ! Мы стараемся быть не такими как все и даем вам: Доставка в согласованный день, если переносим - доставка бесплатно за наш счет. Весь материал соответствует гостам. Вы можете проверить пиломатериалы на складе или на адресе. Если материал не соответствует заявленному качеству - бесплатно меняем его.",
+        "seller": "Торговый Дом ГОСТ",
+        "location": "Пермь, Солнечная 23",
+        "price": "22",
+        "amount": "12",
+        "costPerPiece": "3100",
+        "filter": "auction",
+        "favorite": false,
+        "addedDeals" : false
+      },
+      {
+        "id": "453a5405-ev3cc-4adcadasd7f-afa9-de308d95e40",
+        "type" : "Аукцион",
+        "name": "Доски 120x50",
+        "product": "Стройматериалы",
+        "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 ! Мы стараемся быть не такими как все и даем вам: Доставка в согласованный день, если переносим - доставка бесплатно за наш счет. Весь материал соответствует гостам. Вы можете проверить пиломатериалы на складе или на адресе. Если материал не соответствует заявленному качеству - бесплатно меняем его.",
+        "seller": "Торговый Дом ГОСТ",
+        "location": "Пермь, Солнечная 23",
+        "price": "32322",
+        "amount": "12",
+        "costPerPiece": "3100",
+        "filter": "auction",
+        "favorite": false,
+        "addedDeals" : false
       },
       {
         "id": "453a5405-e3dcc-4c7f-afa9-de308dааf95e40",
@@ -36,7 +100,9 @@
         "price": "31890",
         "amount": "3",
         "costPerPiece": "11030",
-        "filter": "sale"
+        "filter": "sale",
+        "favorite": false,
+        "addedDeals" : false
       },
       {
         "id": "453a5405-e3cc-4ac7f-afaw9-de308dааf95e40",
@@ -49,7 +115,9 @@
         "price": "25890",
         "amount": "18",
         "costPerPiece": "1130",
-        "filter": "auction"
+        "filter": "auction",
+        "favorite": false,
+        "addedDeals" : false
       },
       {
         "id": "453a5423105-e3ccd-4c7f-afaw9-de308dааf95e40",
@@ -62,7 +130,9 @@
         "price": "5400",
         "amount": "321",
         "costPerPiece": "14",
-        "filter": "auction"
+        "filter": "auction",
+        "favorite": false,
+        "addedDeals" : false
       },
       {
         "id": "453a5405-e3cc-4cd7f-afaw9-w",
@@ -75,7 +145,9 @@
         "price": "7000",
         "amount": "234",
         "costPerPiece": "1224",
-        "filter": "auction"
+        "filter": "auction",
+        "favorite": false,
+        "addedDeals" : false
       },
       {
         "id": "453a5405-e3cc-4c7f-afaw9-wcc-4c7",
@@ -88,7 +160,9 @@
         "price": "23000",
         "amount": "15",
         "costPerPiece": "6743",
-        "filter": "sale"
+        "filter": "sale",
+        "favorite": false,
+        "addedDeals" : false
       },
       {
         "id": "453a543a5405-05-e3cc-4c7f-afaw9-wcc-4c7",
@@ -101,7 +175,9 @@
         "price": "15000",
         "amount": "5",
         "costPerPiece": "10000",
-        "filter": "auction"
+        "filter": "auction",
+        "favorite": false,
+        "addedDeals" : false
       },
       {
         "id": "453a540aw9-w5-e3cce3-4c4c7f-afa7f-afaw9-wcc-4c7",
@@ -114,7 +190,9 @@
         "price": "20040",
         "amount": "150",
         "costPerPiece": "3020",
-        "filter": "sale"
+        "filter": "sale",
+        "favorite": false,
+        "addedDeals" : false
       },
       {
         "id": "453a540faaw9-w5-e3cc-4c4c7f-afa7f-afaw9-wcc-4c7",
@@ -127,7 +205,9 @@
         "price": "2040",
         "amount": "10",
         "costPerPiece": "120",
-        "filter": "sale"
+        "filter": "sale",
+        "favorite": true,
+        "addedDeals" : true
       }
       
     ],

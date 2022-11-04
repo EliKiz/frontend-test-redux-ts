@@ -3,31 +3,30 @@ import { RootState } from "../../store/store";
 import { InitialStateTypes} from "../../types";
 
 
-const initialState:InitialStateTypes = { 
-    filtersList: [],
-    activeFilter: "all",
+const initialState:any = { 
+    cardsList: [],
     status: "idle",
-    inputSearch: ""
 };
 
 export const fetchFilters = createAsyncThunk(
-    "filters/fetchFilters",
+    "cards/fetchCards",
     async () =>  {
-        const response = await fetch("http://localhost:3001/filters");
+        const response = await fetch("http://localhost:3001/cards");
         return await response.json();
     }
 );
 
-const filtersSlice = createSlice({ 
-    name: "filters",
+const cardsSlice = createSlice({ 
+    name: "cards",
     initialState,
     reducers: { 
         changeActiveClass: (state, action) => { 
-            state.activeFilter = action.payload;
+            // console.log(action.payload);
+            state.cardsList.favorite = action.payload;
         },
-        changeSearch: (state, action) => { 
-            state.inputSearch = action.payload;
-        }
+        // changeSearch: (state, action) => { 
+        //     state.inputSearch = action.payload;
+        // }
     },
     extraReducers : (builder) => { 
         builder
@@ -35,7 +34,7 @@ const filtersSlice = createSlice({
                 state.status = "loading";
             })
             .addCase(fetchFilters.fulfilled, (state, action) => { 
-                state.filtersList = action.payload;
+                state.cardsList = action.payload;
                 state.status = "idle";
             })
             .addCase(fetchFilters.rejected, (state) => { 
@@ -44,15 +43,15 @@ const filtersSlice = createSlice({
     }
 });
 
-const {actions} = filtersSlice;
+const {actions} = cardsSlice;
 
 export const {     
     changeActiveClass,
-    changeSearch
+    // changeSearch
 } = actions;
 
-export const selectFiltersList = (state: RootState) => state.filtersList.filtersList;
-export const selectActiveFilter = (state: RootState) => state.filtersList.activeFilter;
-export const selectInput = (state: RootState) => state.filtersList.inputSearch;
+// export const selectFiltersList = (state: RootState) => state..filtersList;
+// export const selectActiveFilter = (state: RootState) => state.filtersList.activeFilter;
+// export const selectInput = (state: RootState) => state.filtersList.inputSearch;
 
-export default filtersSlice.reducer;
+export default cardsSlice.reducer;
