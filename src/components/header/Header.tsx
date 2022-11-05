@@ -3,6 +3,7 @@ import hamburger from "./img/hamburger.png";
 import like from "./img/favourite_20.svg";
 import storage from "./img/stock_20.svg";
 import trade from "./img/bag_20.svg";
+import { NavLink } from "react-router-dom";
 
 import "./header.scss";
 
@@ -27,24 +28,63 @@ const Header = () => {
             />
             <div className="header__filters">
                 <ul className="header__filters-wrapper">
-                    <li className="header__filters-wrapper-item active">
-                        <img
-                            className="header__filters-wrapper-item-img"
-                            src={like}
-                            alt="favourite icon"
-                        />
-                        <span className="header__filters-wrapper-item-text">
-                            Избранное
-                        </span>
-                    </li>
-                    <li className="header__filters-wrapper-item">
-                        <img src={storage} alt="storage icon" />
-                        <span>Склад</span>
-                    </li>
-                    <li className="header__filters-wrapper-item">
-                        <img src={trade} alt="trade icon" />
-                        <span>Сделки</span>
-                    </li>
+                    <NavLink
+                        to="/favorite"
+                        end
+                        className={({ isActive }) =>
+                            isActive
+                                ? "header__filters-wrapper-item-active"
+                                : undefined
+                        }>
+                        <li className="header__filters-wrapper-item ">
+                            <img
+                                className="header__filters-wrapper-item-img"
+                                src={like}
+                                alt="favourite icon"
+                            />
+                            <span className="header__filters-wrapper-item-text">
+                                Избранное
+                            </span>
+                        </li>
+                    </NavLink>
+                    <NavLink
+                        to="/storage"
+                        end
+                        className={({ isActive }) =>
+                            isActive
+                                ? "header__filters-wrapper-item-active"
+                                : undefined
+                        }>
+                        <li className="header__filters-wrapper-item ">
+                            <img
+                                className="header__filters-wrapper-item-img"
+                                src={storage}
+                                alt="favourite icon"
+                            />
+                            <span className="header__filters-wrapper-item-text">
+                                Склад
+                            </span>
+                        </li>
+                    </NavLink>
+                    <NavLink
+                        to="/auction"
+                        end
+                        className={({ isActive }) =>
+                            isActive
+                                ? "header__filters-wrapper-item-active"
+                                : undefined
+                        }>
+                        <li className="header__filters-wrapper-item ">
+                            <img
+                                className="header__filters-wrapper-item-img"
+                                src={trade}
+                                alt="favourite icon"
+                            />
+                            <span className="header__filters-wrapper-item-text">
+                                Сделки
+                            </span>
+                        </li>
+                    </NavLink>
                 </ul>
             </div>
         </header>

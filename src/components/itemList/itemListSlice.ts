@@ -12,7 +12,7 @@ export const fetchFilters = createAsyncThunk(
     "cards/fetchCards",
     async () =>  {
         const response = await fetch("http://localhost:3001/cards");
-        return await response.json();
+        return response.json();
     }
 );
 
@@ -20,13 +20,11 @@ const cardsSlice = createSlice({
     name: "cards",
     initialState,
     reducers: { 
-        changeActiveClass: (state, action) => { 
+        changeFavoriteClass: (state, action) => { 
             // console.log(action.payload);
+            console.log(state);
             state.cardsList.favorite = action.payload;
         },
-        // changeSearch: (state, action) => { 
-        //     state.inputSearch = action.payload;
-        // }
     },
     extraReducers : (builder) => { 
         builder
@@ -35,6 +33,7 @@ const cardsSlice = createSlice({
             })
             .addCase(fetchFilters.fulfilled, (state, action) => { 
                 state.cardsList = action.payload;
+                console.log(action.payload);
                 state.status = "idle";
             })
             .addCase(fetchFilters.rejected, (state) => { 
@@ -46,11 +45,10 @@ const cardsSlice = createSlice({
 const {actions} = cardsSlice;
 
 export const {     
-    changeActiveClass,
-    // changeSearch
+    changeFavoriteClass,
 } = actions;
 
-// export const selectFiltersList = (state: RootState) => state..filtersList;
+export const selectCardsList = (state: RootState) => state.cardsList;
 // export const selectActiveFilter = (state: RootState) => state.filtersList.activeFilter;
 // export const selectInput = (state: RootState) => state.filtersList.inputSearch;
 

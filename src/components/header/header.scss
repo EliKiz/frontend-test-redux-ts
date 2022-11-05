@@ -47,6 +47,13 @@
         
         &-wrapper{
             display: flex;
+            justify-content: space-between;
+            a { 
+                margin-right: 10px;
+                &:last-child { 
+                    margin-right: 0;
+                }
+            }
             &-item{
                 display: flex;
                 flex-direction: column;
@@ -57,10 +64,12 @@
                 border-radius: $radius-S;
                 color: $main-color-9;
                 cursor: pointer;
+                
                 &:hover { 
                     background-color: $background-color;
                 }
-                &.active { 
+                &-active { 
+                    border-radius: $radius-S;
                     background-color: $background-color;
                 }
                 &:last-child { 
