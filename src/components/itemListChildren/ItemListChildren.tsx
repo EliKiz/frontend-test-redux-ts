@@ -5,6 +5,8 @@ import geo from "./img/geo_15.svg";
 import favoriteDark from "./img/favouriteDark.svg";
 import favoriteWhite from "./img/favoriteWhite.svg";
 import "./itemListChildren.scss";
+import { changeFavoriteClass } from "../itemList/itemListSlice";
+import { useAppDispatch } from "../app/hooks";
 
 const ItemListChildren = ({
     id,
@@ -20,6 +22,7 @@ const ItemListChildren = ({
     favorite,
     toggleDone,
 }: ItemListChildrenProps) => {
+    const dispatch = useAppDispatch();
     return (
         <li className="item">
             <div className="item__wrapper-left">
@@ -77,6 +80,7 @@ const ItemListChildren = ({
                         </button>
                         <button
                             onClick={() => toggleDone(id)}
+                            // onClick={() => dispatch(changeFavoriteClass(id))}
                             className={classNames(
                                 "item__wrapper-right-buttons-favorite",
                                 {

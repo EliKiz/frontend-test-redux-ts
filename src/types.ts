@@ -11,6 +11,7 @@ export interface Card {
     costPerPiece: string,
     filter: string,
     favorite: boolean,
+    addedDeals: boolean,
 }
 
 export interface ItemListChildrenProps extends Card { 

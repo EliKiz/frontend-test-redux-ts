@@ -12,7 +12,7 @@
         "amount": "11",
         "costPerPiece": "1200",
         "filter": "auction",
-        "favorite": false,
+        "favorite": true,
         "addedDeals" : false
       },
       {
