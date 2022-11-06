@@ -5,7 +5,10 @@ import geo from "./img/geo_15.svg";
 import favoriteDark from "./img/favouriteDark.svg";
 import favoriteWhite from "./img/favoriteWhite.svg";
 import "./itemListChildren.scss";
-import { changeFavoriteClass } from "../itemList/itemListSlice";
+import {
+    changeDealsClass,
+    changeFavoriteClass,
+} from "../itemList/itemListSlice";
 import { useAppDispatch } from "../app/hooks";
 
 const ItemListChildren = ({
@@ -20,6 +23,7 @@ const ItemListChildren = ({
     amount,
     costPerPiece,
     favorite,
+    addedDeals,
     toggleDone,
 }: ItemListChildrenProps) => {
     const dispatch = useAppDispatch();
@@ -75,12 +79,20 @@ const ItemListChildren = ({
                 </div>
                 <div>
                     <div className="item__wrapper-right-buttons">
-                        <button className="item__wrapper-right-buttons-add">
-                            Добавить в сделки
+                        <button
+                            onClick={() => dispatch(changeDealsClass(id))}
+                            className={classNames(
+                                "item__wrapper-right-buttons-favorite",
+                                {
+                                    "item__wrapper-right-buttons-favorite-active":
+                                        addedDeals,
+                                }
+                            )}>
+                            <span>Добавить в сделки</span>
                         </button>
                         <button
-                            onClick={() => toggleDone(id)}
-                            // onClick={() => dispatch(changeFavoriteClass(id))}
+                            // onClick={() => toggleDone(id)}
+                            onClick={() => dispatch(changeFavoriteClass(id))}
                             className={classNames(
                                 "item__wrapper-right-buttons-favorite",
                                 {

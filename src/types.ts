@@ -15,7 +15,7 @@ export interface Card {
 }
 
 export interface ItemListChildrenProps extends Card { 
-    toggleDone: (id: string) => void;
+    toggleDone?: (id: string) => void;
 }
 
 export interface FiltersData { 

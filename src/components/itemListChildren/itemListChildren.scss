@@ -118,6 +118,7 @@
         border-radius: $radius-S;
         cursor: pointer;
         &-active { 
+          color: white;
           background-color: $main-color-9;
         }
       }
