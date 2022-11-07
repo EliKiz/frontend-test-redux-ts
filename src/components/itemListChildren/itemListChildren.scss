@@ -107,7 +107,7 @@
         background-color: $background-color;
         border-radius: $radius-S;
       }
-      &-favorite{ 
+      &-favorite, &-deals{ 
         display: flex;
         justify-content: center;
         align-items: center;
@@ -120,6 +120,12 @@
         &-active { 
           color: white;
           background-color: $main-color-9;
+        }
+      }
+      &-deals { 
+        
+        &-active { 
+          background-color: $background-color-green;
         }
       }
   }

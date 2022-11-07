@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import ListService from "../../service/ListService";
 import { RootState } from "../../store/store";
 import { InitialStateTypes} from "../../types";
 
@@ -13,8 +14,8 @@ const initialState:InitialStateTypes = {
 export const fetchFilters = createAsyncThunk(
     "filters/fetchFilters",
     async () =>  {
-        const response = await fetch("http://localhost:3001/filters");
-        return await response.json();
+        const {requestFilters} = ListService();
+        return await requestFilters();
     }
 );
 

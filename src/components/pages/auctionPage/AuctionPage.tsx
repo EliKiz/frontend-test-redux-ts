@@ -1,26 +1,32 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { FC } from "react";
 import Spinner from "../../../Spinner/Spinner";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import Filters from "../../filters/Filters";
 import Header from "../../header/Header";
 import ItemList from "../../itemList/ItemList";
+import { Card } from "../../../types";
 import {
     fetchCards,
     selectCardsList,
     selectStatusList,
 } from "../../itemList/itemListSlice";
 
-const AuctionPage = () => {
+interface PropsPage {
+    dataProps: Card[];
+}
+
+const AuctionPage: FC<PropsPage> = ({ dataProps }) => {
     const dispatch = useAppDispatch();
     const dataList = useAppSelector(selectCardsList);
     const loading = useAppSelector(selectStatusList);
 
-    useEffect(() => {
-        dispatch(fetchCards());
-    }, []);
+    // useEffect(() => {
+    //     dispatch(fetchCards());
+    // }, []);
 
-    const filterDealsItems = dataList.filter((item) => item.addedDeals);
+    const filterDealsItems = dataProps.filter((item) => item.addedDeals);
+    const isButton = true;
 
     return (
         <>
@@ -33,7 +39,10 @@ const AuctionPage = () => {
                 {loading === "loading" ? (
                     <Spinner />
                 ) : (
-                    <ItemList cardsData={filterDealsItems} />
+                    <ItemList
+                        cardsData={filterDealsItems}
+                        isButton={isButton}
+                    />
                 )}
             </motion.div>
         </>

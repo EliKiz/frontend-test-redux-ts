@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import ListService from "../../service/ListService";
 import { RootState } from "../../store/store";
 import type {Card} from "../../types";
 import { InitialStateTypes} from "../../types";
@@ -18,8 +19,9 @@ const initialState:CardsInitial = {
 export const fetchCards = createAsyncThunk(
     "cards/fetchCards",
     async () =>  {
-        const response = await ( fetch("http://localhost:3001/cards"));
-        return response.json();
+        // const response = await ( fetch("http://localhost:3001/cards"));
+        const {requestCards} = ListService();
+        return await requestCards();
     }
 );
 
@@ -44,6 +46,14 @@ const cardsSlice = createSlice({
                 return {...item, addedDeals: !item.addedDeals};
             });
         },
+        changePayClass: (state, action) => { 
+            state.cardsList = state.cardsList.map((item) => { 
+                if(item.id !== action.payload) { 
+                    return item;
+                }
+                return { ...item, pageDeals: !item.pageDeals};
+            });
+        }
         // filteredCards: (state, action) => { 
         //     state.cardsList = state.cardsList.filter((card) => { 
         //         if (state.cardsList.length === 0) {
@@ -73,7 +83,8 @@ const {actions} = cardsSlice;
 
 export const {     
     changeFavoriteClass,
-    changeDealsClass
+    changeDealsClass,
+    changePayClass
 } = actions;
 
 export const selectCardsList = (state: RootState) => state.cardsList.cardsList;

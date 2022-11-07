@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { FC, useEffect } from "react";
 import { useGetCardsQuery } from "../../../api/apiSlice";
 import Spinner from "../../../Spinner/Spinner";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
@@ -14,14 +14,18 @@ import {
     selectStatusList,
 } from "../../itemList/itemListSlice";
 
-const StoragePage = () => {
+interface PropsPage {
+    dataProps: Card[];
+}
+
+const StoragePage: FC<PropsPage> = ({ dataProps }) => {
     const dispatch = useAppDispatch();
     const dataList = useAppSelector(selectCardsList);
     const loading = useAppSelector(selectStatusList);
 
-    useEffect(() => {
-        dispatch(fetchCards());
-    }, []);
+    // useEffect(() => {
+    //     dispatch(fetchCards());
+    // }, [dispatch]);
 
     console.log("STATUS", loading);
     return (
@@ -35,7 +39,7 @@ const StoragePage = () => {
                 {loading === "loading" ? (
                     <Spinner />
                 ) : (
-                    <ItemList cardsData={dataList} />
+                    <ItemList cardsData={dataProps} />
                 )}
             </motion.div>
         </>

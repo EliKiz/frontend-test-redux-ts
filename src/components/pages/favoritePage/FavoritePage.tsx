@@ -3,6 +3,7 @@ import { Card } from "../../../types";
 import { useGetCardsQuery } from "../../../api/apiSlice";
 import Filters from "../../filters/Filters";
 import Header from "../../header/Header";
+
 import ItemList from "../../itemList/ItemList";
 import ItemListChildren from "../../itemListChildren/ItemListChildren";
 import Spinner from "../../../Spinner/Spinner";
@@ -12,25 +13,32 @@ import {
     selectCardsList,
     selectStatusList,
 } from "../../itemList/itemListSlice";
-import { useEffect } from "react";
+import { FC, useEffect } from "react";
 
-const FavoritePage = () => {
+interface PropsPage {
+    dataProps: Card[];
+}
+
+const FavoritePage: FC<PropsPage> = ({ dataProps }) => {
     // const {
     //     data: cards = [] as Card[],
     //     isLoading,
     //     isError,
     // } = useGetCardsQuery();
-    const dispatch = useAppDispatch();
     const dataList = useAppSelector(selectCardsList);
     const loading = useAppSelector(selectStatusList);
 
-    useEffect(() => {
-        dispatch(fetchCards());
-    }, []);
-
-    const filterFavoriteItems = dataList.filter((item) => {
-        return item.favorite === true;
-    });
+    // const dispatch = useAppDispatch();
+    // useEffect(() => {
+    //     dispatch(fetchCards());
+    // }, [dispatch]);
+    const dataArr = Object.values(dataProps);
+    console.log("dataProps", dataArr);
+    const filterFavoriteItems = dataProps.filter(
+        (item: { favorite: boolean }) => {
+            return item.favorite === true;
+        }
+    );
 
     return (
         <>

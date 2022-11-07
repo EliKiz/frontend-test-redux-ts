@@ -8,6 +8,7 @@ import "./itemListChildren.scss";
 import {
     changeDealsClass,
     changeFavoriteClass,
+    changePayClass,
 } from "../itemList/itemListSlice";
 import { useAppDispatch } from "../app/hooks";
 
@@ -24,9 +25,11 @@ const ItemListChildren = ({
     costPerPiece,
     favorite,
     addedDeals,
-    toggleDone,
+    pageDeals,
+    isButton,
 }: ItemListChildrenProps) => {
     const dispatch = useAppDispatch();
+    console.log(pageDeals);
     return (
         <li className="item">
             <div className="item__wrapper-left">
@@ -79,17 +82,34 @@ const ItemListChildren = ({
                 </div>
                 <div>
                     <div className="item__wrapper-right-buttons">
-                        <button
-                            onClick={() => dispatch(changeDealsClass(id))}
-                            className={classNames(
-                                "item__wrapper-right-buttons-favorite",
-                                {
-                                    "item__wrapper-right-buttons-favorite-active":
-                                        addedDeals,
-                                }
-                            )}>
-                            <span>Добавить в сделки</span>
-                        </button>
+                        {isButton ? (
+                            <button
+                                onClick={() => dispatch(changePayClass(id))}
+                                className={classNames(
+                                    "item__wrapper-right-buttons-deals",
+                                    {
+                                        "item__wrapper-right-buttons-deals-active":
+                                            !pageDeals,
+                                    }
+                                )}>
+                                <span>
+                                    {!pageDeals ? "Оплатить" : "Оплачено"}
+                                </span>
+                            </button>
+                        ) : (
+                            <button
+                                onClick={() => dispatch(changeDealsClass(id))}
+                                className={classNames(
+                                    "item__wrapper-right-buttons-deals",
+                                    {
+                                        "item__wrapper-right-buttons-deals-active":
+                                            addedDeals,
+                                    }
+                                )}>
+                                <span>{"Добавить в сделки"}</span>
+                            </button>
+                        )}
+
                         <button
                             // onClick={() => toggleDone(id)}
                             onClick={() => dispatch(changeFavoriteClass(id))}

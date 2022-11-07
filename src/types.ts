@@ -12,6 +12,8 @@ export interface Card {
     filter: string,
     favorite: boolean,
     addedDeals: boolean,
+    pageDeals: boolean,
+    isButton: boolean | undefined
 }
 
 export interface ItemListChildrenProps extends Card { 

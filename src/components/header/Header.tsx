@@ -6,8 +6,19 @@ import trade from "./img/bag_20.svg";
 import { NavLink } from "react-router-dom";
 
 import "./header.scss";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { changeSearch, selectInput } from "../filters/filtersSlice";
+import { useState } from "react";
 
 const Header = () => {
+    const dispatch = useAppDispatch();
+    const inputStore = useAppSelector(selectInput);
+
+    const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+        // setSearch(event.target.value);
+        dispatch(changeSearch(event.target.value));
+    };
+
     return (
         <header className="header">
             <div className="header__logo">
@@ -22,6 +33,8 @@ const Header = () => {
                 <div className="header__catalog-text">Каталог</div>
             </button>
             <input
+                onChange={(e) => handleSearch(e)}
+                value={inputStore}
                 className="header__search"
                 type="text"
                 placeholder="Поиск: например, Труба цинковая ГОСТ 245-50.02 4 мм"

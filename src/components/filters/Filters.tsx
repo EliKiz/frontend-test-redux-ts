@@ -2,7 +2,6 @@ import searchIcon from "./img/Vector.svg";
 import type { Card } from "../../types";
 import classNames from "classnames";
 import { useEffect, useMemo, useState } from "react";
-import Spinner from "../../Spinner/Spinner";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import {
     changeActiveClass,
@@ -10,6 +9,7 @@ import {
     fetchFilters,
     selectActiveFilter,
     selectFiltersList,
+    selectInput,
 } from "./filtersSlice";
 import { useGetCardsQuery } from "../../api/apiSlice";
 
@@ -27,13 +27,14 @@ const Filters = () => {
 
     const filtersList = useAppSelector(selectFiltersList);
     const activeFilter = useAppSelector(selectActiveFilter);
+    const inputStore = useAppSelector(selectInput);
 
     const dispatch = useAppDispatch();
 
-    const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearch(event.target.value);
-        dispatch(changeSearch(search));
-    };
+    // const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     // setSearch(event.target.value);
+    //     dispatch(changeSearch(event.target.value));
+    // };
 
     const changeFilter = (value: string) => {
         dispatch(changeActiveClass(value));
@@ -67,6 +68,8 @@ const Filters = () => {
 
     const handleSubmite = (event: React.ChangeEvent<HTMLFormElement>) => {
         event.preventDefault();
+        console.log(event.target.value);
+        dispatch(changeSearch(search));
         // setSearch(event.target.value);
         // dispatch(changeSearch(search));
     };
@@ -114,7 +117,7 @@ const Filters = () => {
             <div className="filters__search">
                 <form onSubmit={handleSubmite} className="filters__search-form">
                     <input
-                        onChange={(e) => handleSearch(e)}
+                        onChange={(e) => setSearch(e.target.value)}
                         className="filters__search-form-input"
                         type="text"
                         value={search}
