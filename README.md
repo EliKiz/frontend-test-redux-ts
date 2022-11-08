@@ -1,4 +1,4 @@
-# Test task
+# Test task for the position of Frontend developer
 
 # ![image](src/assets/mainScrin.jpg)
 
