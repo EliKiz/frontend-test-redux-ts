@@ -25,6 +25,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "@typescript-eslint/no-non-null-assertion": "off",
         "react/no-unescaped-entities": 0 ,
         "react/react-in-jsx-scope": "off",
         "indent": [

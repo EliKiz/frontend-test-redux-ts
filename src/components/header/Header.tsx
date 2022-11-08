@@ -8,7 +8,6 @@ import { NavLink } from "react-router-dom";
 import "./header.scss";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { changeSearch, selectInput } from "../filters/filtersSlice";
-import { useState } from "react";
 
 const Header = () => {
     const dispatch = useAppDispatch();
