@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# Quiz - Questions app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+# ![image](src/assets/MainScrin.jpg)
 
-## Available Scripts
+## General info
 
-In the project directory, you can run:
+Implement a small SPA application using React.js, which consists of 3 pages: "Favorites", "Warehouse", "Deals".
 
-### `npm start`
+## Link to layout in Figma
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://www.figma.com/file/esSprOWWWjJ1Gb7IoMHGmq/Untitled?node-id=0%3A1
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Main task
 
-### `npm test`
+-Create an “Offer Card” component (Includes fake data from JSON, there must be at least 10 offers);
+-Display offer cards in the "Warehouse" section;
+-Sorting offers (all, auction, direct sales);
+-Search in the warehouse by product name;
+-"Add to deals" button (on click, the card is added to the "Deals" section);
+-Button for adding an offer to favorites (on click, the offer is added to the "Favorites" section);
+-"Pay" button in the "Transactions" section;
+-"Paid" button in the "Transactions" section (disabled state, after clicking on the "Pay" button);
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Page descriptions
 
-### `npm run build`
+The application is launched from the Warehouse page. Where you can do the following:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-Sorting by types of offers (All, Auction, Direct sales);
+-Search by name;
+-Add to deals;
+-Add to favorites;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+On the Deals and Favorites page, the following actions are performed:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-Sorting by types of offers (All, Auction, Direct sales);
+-Pay;
+-Add to favorites;
 
-### `npm run eject`
+Offer Card Description:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# ![image](src/assets/MainScrin.jpg)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Project is created with:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-   React
+-   Redux
+-   Redux-Toolkit
+-   TypeScript
+-   Sass modules
 
-## Learn More
+## Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run this project, install it locally using npm:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ npm install
+$ npm start
+```
+

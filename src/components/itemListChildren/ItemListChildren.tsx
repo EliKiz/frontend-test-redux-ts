@@ -1,16 +1,17 @@
-import { ItemListChildrenProps } from "../../types";
+import { Card } from "../../types";
 import cardImg from "./img/ImageCard.png";
 import classNames from "classnames";
 import geo from "./img/geo_15.svg";
 import favoriteDark from "./img/favouriteDark.svg";
 import favoriteWhite from "./img/favoriteWhite.svg";
-import "./itemListChildren.scss";
 import {
     changeDealsClass,
     changeFavoriteClass,
     changePayClass,
 } from "../itemList/itemListSlice";
 import { useAppDispatch } from "../app/hooks";
+
+import "./itemListChildren.scss";
 
 const ItemListChildren = ({
     id,
@@ -25,11 +26,10 @@ const ItemListChildren = ({
     costPerPiece,
     favorite,
     addedDeals,
-    pageDeals,
+    payment,
     isButton,
-}: ItemListChildrenProps) => {
+}: Card) => {
     const dispatch = useAppDispatch();
-    console.log(pageDeals);
     return (
         <li className="item">
             <div className="item__wrapper-left">
@@ -89,11 +89,11 @@ const ItemListChildren = ({
                                     "item__wrapper-right-buttons-deals",
                                     {
                                         "item__wrapper-right-buttons-deals-active":
-                                            !pageDeals,
+                                            !payment,
                                     }
                                 )}>
                                 <span>
-                                    {!pageDeals ? "Оплатить" : "Оплачено"}
+                                    {!payment ? "Оплатить" : "Оплачено"}
                                 </span>
                             </button>
                         ) : (
@@ -111,7 +111,6 @@ const ItemListChildren = ({
                         )}
 
                         <button
-                            // onClick={() => toggleDone(id)}
                             onClick={() => dispatch(changeFavoriteClass(id))}
                             className={classNames(
                                 "item__wrapper-right-buttons-favorite",

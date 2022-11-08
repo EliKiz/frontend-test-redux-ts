@@ -1,9 +1,10 @@
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Spinner from "../../Spinner/Spinner";
-import App from "../app/App";
+import Spinner from "../../spinner/Spinner";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+import Filters from "../filters/Filters";
+import Header from "../header/Header";
 import {
     fetchCards,
     selectCardsList,
@@ -21,11 +22,13 @@ const AppRoutes = () => {
 
     useEffect(() => {
         dispatch(fetchCards());
-    }, []);
+    }, [dispatch]);
 
     return (
         <AnimatePresence>
             <BrowserRouter>
+                <Header />
+                <Filters />
                 <Routes>
                     <Route path="/" element={<Navigate to="/storage" />} />
                     <Route

@@ -10,7 +10,6 @@
     border-radius: $radius-S ;
     margin-top: 50px;
     &__wrapper-left{
-        // display: flex;
         width: 70%;
   }
   &__wrapper-left-content{
@@ -111,6 +110,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        
         margin-left: 15px;
         border: none;
         padding: 15px;
@@ -118,13 +118,19 @@
         border-radius: $radius-S;
         cursor: pointer;
         &-active { 
+          
           color: white;
           background-color: $main-color-9;
         }
       }
       &-deals { 
-        
+        min-width: 200px;
+        background-color: white;
+        border-radius: 10px;
+        min-width: 200px;
+        border: 2px solid $border-color;
         &-active { 
+          min-width: 200px;
           background-color: $background-color-green;
         }
       }

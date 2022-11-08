@@ -12,13 +12,10 @@ export interface Card {
     filter: string,
     favorite: boolean,
     addedDeals: boolean,
-    pageDeals: boolean,
+    payment: boolean,
     isButton: boolean | undefined
 }
 
-export interface ItemListChildrenProps extends Card { 
-    toggleDone?: (id: string) => void;
-}
 
 export interface FiltersData { 
     id: string,

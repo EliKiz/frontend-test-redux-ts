@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import ListService from "../../service/ListService";
 import { RootState } from "../../store/store";
 import type {Card} from "../../types";
-import { InitialStateTypes} from "../../types";
 
 interface CardsInitial { 
     cardsList: Card[],
@@ -19,7 +18,6 @@ const initialState:CardsInitial = {
 export const fetchCards = createAsyncThunk(
     "cards/fetchCards",
     async () =>  {
-        // const response = await ( fetch("http://localhost:3001/cards"));
         const {requestCards} = ListService();
         return await requestCards();
     }
@@ -51,17 +49,9 @@ const cardsSlice = createSlice({
                 if(item.id !== action.payload) { 
                     return item;
                 }
-                return { ...item, pageDeals: !item.pageDeals};
+                return { ...item, payment: !item.payment};
             });
         }
-        // filteredCards: (state, action) => { 
-        //     state.cardsList = state.cardsList.filter((card) => { 
-        //         if (state.cardsList.length === 0) {
-        //             return card;
-        //         }
-        //         return card.name.toLocaleLowerCase().includes(action.payload.toLocaleLowerCase());
-        //     });
-        // }
 
     },
     extraReducers : (builder) => { 
@@ -89,7 +79,5 @@ export const {
 
 export const selectCardsList = (state: RootState) => state.cardsList.cardsList;
 export const selectStatusList = (state: RootState) => state.cardsList.status;
-// export const selectActiveFilter = (state: RootState) => state.filtersList.activeFilter;
-// export const selectInput = (state: RootState) => state.filtersList.inputSearch;
 
 export default cardsSlice.reducer;

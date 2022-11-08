@@ -1,6 +1,5 @@
 
 const FILTERS_URL = "http://localhost:3001/filters";
-
 const CARDS_URLD = "http://localhost:3001/cards";
 
 const Service = () => { 
