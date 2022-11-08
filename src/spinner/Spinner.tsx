@@ -7,8 +7,7 @@ const Spinner = () => {
             width="200px"
             height="200px"
             viewBox="0 0 100 100"
-            preserveAspectRatio="xMidYMid"
-        >
+            preserveAspectRatio="xMidYMid">
             <g transform="translate(80,50)">
                 <g transform="rotate(0)">
                     <circle cx="0" cy="0" r="7" fill="#1c4595" fillOpacity="1">
@@ -19,16 +18,14 @@ const Spinner = () => {
                             values="1.5 1.5;1 1"
                             keyTimes="0;1"
                             dur="1s"
-                            repeatCount="indefinite"
-                        ></animateTransform>
+                            repeatCount="indefinite"></animateTransform>
                         <animate
                             attributeName="fillOpacity"
                             keyTimes="0;1"
                             dur="1s"
                             repeatCount="indefinite"
                             values="1;0"
-                            begin="-0.875s"
-                        ></animate>
+                            begin="-0.875s"></animate>
                     </circle>
                 </g>
             </g>
@@ -39,8 +36,7 @@ const Spinner = () => {
                         cy="0"
                         r="7"
                         fill="#1c4595"
-                        fillOpacity="0.875"
-                    >
+                        fillOpacity="0.875">
                         <animateTransform
                             attributeName="transform"
                             type="scale"
@@ -48,16 +44,14 @@ const Spinner = () => {
                             values="1.5 1.5;1 1"
                             keyTimes="0;1"
                             dur="1s"
-                            repeatCount="indefinite"
-                        ></animateTransform>
+                            repeatCount="indefinite"></animateTransform>
                         <animate
                             attributeName="fillOpacity"
                             keyTimes="0;1"
                             dur="1s"
                             repeatCount="indefinite"
                             values="1;0"
-                            begin="-0.75s"
-                        ></animate>
+                            begin="-0.75s"></animate>
                     </circle>
                 </g>
             </g>
@@ -68,8 +62,7 @@ const Spinner = () => {
                         cy="0"
                         r="7"
                         fill="#1c4595"
-                        fillOpacity="0.75"
-                    >
+                        fillOpacity="0.75">
                         <animateTransform
                             attributeName="transform"
                             type="scale"
@@ -77,16 +70,14 @@ const Spinner = () => {
                             values="1.5 1.5;1 1"
                             keyTimes="0;1"
                             dur="1s"
-                            repeatCount="indefinite"
-                        ></animateTransform>
+                            repeatCount="indefinite"></animateTransform>
                         <animate
                             attributeName="fillOpacity"
                             keyTimes="0;1"
                             dur="1s"
                             repeatCount="indefinite"
                             values="1;0"
-                            begin="-0.625s"
-                        ></animate>
+                            begin="-0.625s"></animate>
                     </circle>
                 </g>
             </g>
@@ -97,8 +88,7 @@ const Spinner = () => {
                         cy="0"
                         r="7"
                         fill="#1c4595"
-                        fillOpacity="0.625"
-                    >
+                        fillOpacity="0.625">
                         <animateTransform
                             attributeName="transform"
                             type="scale"
@@ -106,16 +96,14 @@ const Spinner = () => {
                             values="1.5 1.5;1 1"
                             keyTimes="0;1"
                             dur="1s"
-                            repeatCount="indefinite"
-                        ></animateTransform>
+                            repeatCount="indefinite"></animateTransform>
                         <animate
                             attributeName="fillOpacity"
                             keyTimes="0;1"
                             dur="1s"
                             repeatCount="indefinite"
                             values="1;0"
-                            begin="-0.5s"
-                        ></animate>
+                            begin="-0.5s"></animate>
                     </circle>
                 </g>
             </g>
@@ -126,8 +114,7 @@ const Spinner = () => {
                         cy="0"
                         r="7"
                         fill="#1c4595"
-                        fillOpacity="0.5"
-                    >
+                        fillOpacity="0.5">
                         <animateTransform
                             attributeName="transform"
                             type="scale"
@@ -135,16 +122,14 @@ const Spinner = () => {
                             values="1.5 1.5;1 1"
                             keyTimes="0;1"
                             dur="1s"
-                            repeatCount="indefinite"
-                        ></animateTransform>
+                            repeatCount="indefinite"></animateTransform>
                         <animate
                             attributeName="fillOpacity"
                             keyTimes="0;1"
                             dur="1s"
                             repeatCount="indefinite"
                             values="1;0"
-                            begin="-0.375s"
-                        ></animate>
+                            begin="-0.375s"></animate>
                     </circle>
                 </g>
             </g>
@@ -155,8 +140,7 @@ const Spinner = () => {
                         cy="0"
                         r="7"
                         fill="#1c4595"
-                        fillOpacity="0.375"
-                    >
+                        fillOpacity="0.375">
                         <animateTransform
                             attributeName="transform"
                             type="scale"
@@ -164,16 +148,14 @@ const Spinner = () => {
                             values="1.5 1.5;1 1"
                             keyTimes="0;1"
                             dur="1s"
-                            repeatCount="indefinite"
-                        ></animateTransform>
+                            repeatCount="indefinite"></animateTransform>
                         <animate
                             attributeName="fillOpacity"
                             keyTimes="0;1"
                             dur="1s"
                             repeatCount="indefinite"
                             values="1;0"
-                            begin="-0.25s"
-                        ></animate>
+                            begin="-0.25s"></animate>
                     </circle>
                 </g>
             </g>
@@ -184,8 +166,7 @@ const Spinner = () => {
                         cy="0"
                         r="7"
                         fill="#1c4595"
-                        fillOpacity="0.25"
-                    >
+                        fillOpacity="0.25">
                         <animateTransform
                             attributeName="transform"
                             type="scale"
@@ -193,16 +174,14 @@ const Spinner = () => {
                             values="1.5 1.5;1 1"
                             keyTimes="0;1"
                             dur="1s"
-                            repeatCount="indefinite"
-                        ></animateTransform>
+                            repeatCount="indefinite"></animateTransform>
                         <animate
                             attributeName="fillOpacity"
                             keyTimes="0;1"
                             dur="1s"
                             repeatCount="indefinite"
                             values="1;0"
-                            begin="-0.125s"
-                        ></animate>
+                            begin="-0.125s"></animate>
                     </circle>
                 </g>
             </g>
@@ -213,8 +192,7 @@ const Spinner = () => {
                         cy="0"
                         r="7"
                         fill="#1c4595"
-                        fillOpacity="0.125"
-                    >
+                        fillOpacity="0.125">
                         <animateTransform
                             attributeName="transform"
                             type="scale"
@@ -222,16 +200,14 @@ const Spinner = () => {
                             values="1.5 1.5;1 1"
                             keyTimes="0;1"
                             dur="1s"
-                            repeatCount="indefinite"
-                        ></animateTransform>
+                            repeatCount="indefinite"></animateTransform>
                         <animate
                             attributeName="fillOpacity"
                             keyTimes="0;1"
                             dur="1s"
                             repeatCount="indefinite"
                             values="1;0"
-                            begin="0s"
-                        ></animate>
+                            begin="0s"></animate>
                     </circle>
                 </g>
             </g>
