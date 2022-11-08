@@ -1,4 +1,4 @@
-# Quiz - Questions app
+# Test task
 
 # ![image](src/assets/mainScrin.jpg)
 
