@@ -1,13 +1,13 @@
-import { motion } from "framer-motion";
+import Motion from "../../motion/Motion";
 import { Card } from "../../../types";
 import ItemList from "../../itemList/ItemList";
-import { FC } from "react";
+import Spinner from "../../spinner/Spinner";
 
 interface PropsPage {
     dataProps: Card[];
 }
 
-const FavoritePage: FC<PropsPage> = ({ dataProps }) => {
+const FavoritePage = ({ dataProps }: PropsPage) => {
     const filterFavoriteItems = dataProps.filter(
         (item: { favorite: boolean }) => {
             return item.favorite === true;
@@ -15,14 +15,13 @@ const FavoritePage: FC<PropsPage> = ({ dataProps }) => {
     );
 
     return (
-        <>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}>
+        <Motion>
+            {!dataProps.length ? (
+                <Spinner />
+            ) : (
                 <ItemList cardsData={filterFavoriteItems} />
-            </motion.div>
-        </>
+            )}
+        </Motion>
     );
 };
 

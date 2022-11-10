@@ -16,18 +16,23 @@ export interface Card {
     isButton: boolean | undefined
 }
 
+export interface ContentFiltersProps  {
+    data: FiltersData[];
+}
 
 export interface FiltersData { 
     id: string,
     active: boolean,
     colored: string,
     label: string,
-    value: string;
+    value: string,
+    filtersList: object[]
 }
 
 export interface InitialStateTypes { 
     filtersList: FiltersData[],
     activeFilter: "all" 
     status: "idle" | "loading" | "error",
-    inputSearch: ""
+    filterSearch: "",
+    headerSearch: ""
 }

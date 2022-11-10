@@ -1,25 +1,24 @@
-import { motion } from "framer-motion";
-import { FC } from "react";
+import Motion from "../../motion/Motion";
 import ItemList from "../../itemList/ItemList";
 import { Card } from "../../../types";
+import Spinner from "../../spinner/Spinner";
 
 interface PropsPage {
     dataProps: Card[];
 }
 
-const AuctionPage: FC<PropsPage> = ({ dataProps }) => {
+const AuctionPage = ({ dataProps }: PropsPage) => {
     const filterDealsItems = dataProps.filter((item) => item.addedDeals);
     const isButton = true;
 
     return (
-        <>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}>
+        <Motion>
+            {!dataProps.length ? (
+                <Spinner />
+            ) : (
                 <ItemList cardsData={filterDealsItems} isButton={isButton} />
-            </motion.div>
-        </>
+            )}
+        </Motion>
     );
 };
 

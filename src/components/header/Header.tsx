@@ -7,15 +7,15 @@ import { NavLink } from "react-router-dom";
 
 import "./header.scss";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { changeSearch, selectInput } from "../filters/filtersSlice";
+import { changeHeaderSearch, selectInputHeader } from "../filters/filtersSlice";
 
 const Header = () => {
     const dispatch = useAppDispatch();
-    const inputStore = useAppSelector(selectInput);
+    const inputStore = useAppSelector(selectInputHeader);
 
     const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         // setSearch(event.target.value);
-        dispatch(changeSearch(event.target.value));
+        dispatch(changeHeaderSearch(event.target.value));
     };
 
     return (

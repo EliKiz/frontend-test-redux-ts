@@ -1,22 +1,21 @@
-import { motion } from "framer-motion";
-import { FC } from "react";
 import { Card } from "../../../types";
 import ItemList from "../../itemList/ItemList";
+import Motion from "../../motion/Motion";
+import Spinner from "../../spinner/Spinner";
 
 interface PropsPage {
     dataProps: Card[];
 }
 
-const StoragePage: FC<PropsPage> = ({ dataProps }) => {
+const StoragePage = ({ dataProps }: PropsPage) => {
     return (
-        <>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}>
+        <Motion>
+            {!dataProps.length ? (
+                <Spinner />
+            ) : (
                 <ItemList cardsData={dataProps} />
-            </motion.div>
-        </>
+            )}
+        </Motion>
     );
 };
 

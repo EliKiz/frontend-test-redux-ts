@@ -1,11 +1,12 @@
 import ItemListChildren from "../itemListChildren/ItemListChildren";
 import { Card } from "../../types";
 import { useAppSelector } from "../app/hooks";
-import { selectActiveFilter, selectInput } from "../filters/filtersSlice";
+import { selectActiveFilter, selectInputHeader } from "../filters/filtersSlice";
 import { FC, useMemo } from "react";
+import PropTypes from "prop-types";
+import Skeleton from "../skeleton/Skeleton";
 
 import "./itemList.scss";
-import Skeleton from "../skeleton/Skeleton";
 
 interface PropsList {
     cardsData: Card[];
@@ -14,7 +15,7 @@ interface PropsList {
 
 const ItemList: FC<PropsList> = ({ cardsData, isButton }) => {
     const activeFilter = useAppSelector(selectActiveFilter);
-    const inputText = useAppSelector(selectInput);
+    const inputText = useAppSelector(selectInputHeader);
 
     const filteredItems = useMemo(() => {
         return cardsData

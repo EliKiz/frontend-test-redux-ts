@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import ListService from "../../service/ListService";
+import {requestCards} from "../../service/ListService";
 import { RootState } from "../../store/store";
 import type {Card} from "../../types";
 
@@ -18,7 +18,6 @@ const initialState:CardsInitial = {
 export const fetchCards = createAsyncThunk(
     "cards/fetchCards",
     async () =>  {
-        const {requestCards} = ListService();
         return await requestCards();
     }
 );
